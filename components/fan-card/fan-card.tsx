@@ -33,7 +33,7 @@ const FanCard = ({ card, ref, width }: FanCardProps) => {
         borderRadius: 14,
         overflow: "hidden",
         cursor: "pointer",
-        // boxShadow: "0 12px 40px rgba(0,0,0,0.55)",
+        boxShadow: "0 12px 40px rgba(31,41, 51, 0.35)",
       }}
     >
       <img
@@ -50,23 +50,22 @@ const FanCard = ({ card, ref, width }: FanCardProps) => {
         draggable={false}
       />
       {/* Gradient label badge */}
-      <div
-        style={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          right: 0,
-          padding: "28px 12px 10px",
-          background:
-            "linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%)",
-          fontFamily: "'Bebas Neue', sans-serif",
-          fontSize: 12,
-          letterSpacing: "0.3em",
-          color: card.accent,
-        }}
-      >
-        {card.label}
-      </div>
+      {/* <div */}
+      {/*   style={{ */}
+      {/*     position: "absolute", */}
+      {/*     bottom: 0, */}
+      {/*     left: 0, */}
+      {/*     right: 0, */}
+      {/*     padding: "28px 12px 10px", */}
+      {/*     background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%)", */}
+      {/*     fontFamily: "'Bebas Neue', sans-serif", */}
+      {/*     fontSize: 12, */}
+      {/*     letterSpacing: "0.3em", */}
+      {/*     color: card.accent, */}
+      {/*   }} */}
+      {/* > */}
+      {/*   {card.label} */}
+      {/* </div> */}
     </div>
   );
 };

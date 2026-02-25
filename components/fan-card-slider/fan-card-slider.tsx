@@ -6,6 +6,7 @@ import { cardTransform } from "./fan-card-slider.util";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SLIDER_CONFIG } from "./config";
+import { ArrowLeft, ArrowRight } from "@boxicons/react";
 // import styles from "./styles.module.css";
 
 /** This prevents version-mismatch issues between React and GSAP internals. */
@@ -165,13 +166,13 @@ export const FanCardSlider = ({ cards }: FanCarSliderProps) => {
   return (
     <div
       ref={containerRef}
-      className="flex items-center justify-center min-h-screen overflow-hidden relative"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      <div className="flex flex-col lg:flex-row items-center gap-0 lg:gap-20 max-w-5xl w-full px-12 py-10">
+      <div className="flex w-full max-w-5xl flex-col items-center gap-5 px-12 py-10 lg:flex-row lg:gap-20">
         {/* ── Fan Stage ── */}
         <div
-          className="relative shrink-0 flex items-start justify-center overflow-hidden"
-          style={{ width: 380, height: 550 }}
+          className="relative flex h-105 w-95 shrink-0 items-start justify-center overflow-hidden lg:h-137.5"
+          // style={{ width: 380, height: 550 }}
         >
           {cards.map((card, i) => (
             <FanCard
@@ -203,7 +204,7 @@ export const FanCardSlider = ({ cards }: FanCarSliderProps) => {
         </div>
 
         {/* ── Text Panel ── */}
-        <div className="flex-1 min-w-0">
+        <div className="min-w-0 flex-1">
           {/*
             ref={textRef} — the entire block (eyebrow + title + body) is
             targeted as one GSAP unit: fade-up-out then slide-up-in.
@@ -220,45 +221,35 @@ export const FanCardSlider = ({ cards }: FanCarSliderProps) => {
             </p>
 
             <h2
-              className="text-2xl lg:text-5xl leading-none mb-6 text-black"
+              className="mb-6 text-2xl leading-none lg:text-5xl"
               style={{ fontFamily: "'DM Serif Display', serif" }}
             >
               {active.label}
             </h2>
 
-            <p className="text-sm lg:text-base text-black/55 leading-relaxed font-light max-w-sm">
+            <p className="text-brand-dark/55 max-w-sm text-sm leading-relaxed font-light lg:text-base">
               {active.text}
             </p>
           </div>
 
           {/* Controls */}
-          <div className="flex items-center gap-4 mt-11">
+          <div className="mt-11 flex items-center gap-4">
             <button
               onClick={() => navigate(-1)}
               aria-label="Previous"
-              className="w-12 h-12 rounded-full flex items-center justify-center text-black/55 text-xl
-                         transition-all duration-200 hover:scale-105 active:scale-95"
-              style={{
-                border: "1.5px solid rgba(0,0,0,0.13)",
-                background: "rgba(0,0,0,0.04)",
-              }}
+              className="bg-brand-turquoise-light border-brand-turquoise-mid/60 text-brand-dark/55 flex h-12 w-12 items-center justify-center rounded-full border-[1.5px] text-xl transition-all duration-200 hover:scale-105 active:scale-95"
             >
-              ←
+              <ArrowLeft />
             </button>
             <button
               onClick={() => navigate(1)}
               aria-label="Next"
-              className="w-12 h-12 rounded-full flex items-center justify-center text-black/55 text-xl
-                         transition-all duration-200 hover:scale-105 active:scale-95"
-              style={{
-                border: "1.5px solid rgba(0,0,0,0.13)",
-                background: "rgba(0,0,0,0.04)",
-              }}
+              className="bg-brand-turquoise-light border-brand-turquoise-mid/60 text-brand-dark/55 flex h-12 w-12 items-center justify-center rounded-full border-[1.5px] text-xl transition-all duration-200 hover:scale-105 active:scale-95"
             >
-              →
+              <ArrowRight />
             </button>
 
-            <div className="flex items-center gap-2 ml-1">
+            <div className="ml-1 flex items-center gap-2">
               {cards.map((_, i) => (
                 <div
                   key={i}
@@ -267,8 +258,7 @@ export const FanCardSlider = ({ cards }: FanCarSliderProps) => {
                     borderRadius: 3,
                     transition: "width 0.35s ease, background 0.35s ease",
                     width: i === activeIndex ? 22 : 5,
-                    background:
-                      i === activeIndex ? "#fff" : "rgba(255,255,255,0.2)",
+                    background: i === activeIndex ? "#fff" : "rgba(255,255,255,0.2)",
                   }}
                 />
               ))}
@@ -276,16 +266,6 @@ export const FanCardSlider = ({ cards }: FanCarSliderProps) => {
           </div>
         </div>
       </div>
-
-      <p
-        className="fixed bottom-5 left-1/2 -translate-x-1/2 text-xs tracking-widest select-none"
-        style={{
-          color: "rgba(255,255,255,0.18)",
-          fontFamily: "'DM Sans', sans-serif",
-        }}
-      >
-        ← → ARROW KEYS
-      </p>
     </div>
   );
 };
