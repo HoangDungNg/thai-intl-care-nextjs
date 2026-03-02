@@ -1,18 +1,16 @@
-"use client";
-
-import { useRef, useEffect, useCallback } from "react";
+import { cn } from "@/lib/utils";
 import { useGSAP } from "@gsap/react";
+import { useCallback, useEffect, useRef } from "react";
 import gsap from "gsap";
-import { type GalleryImage } from "@/components/gallery-card/gallery-card";
-import { cn } from "@/app/lib/util";
-import { GallerySlider } from "@/components/gallery-slider/gallery-slider";
 
-interface TestimonialsProps {
+import { GalleryCard, type GalleryImage } from "@/components/gallery-card/gallery-card";
+
+interface GallerySliderProps {
   images: GalleryImage[];
   className?: string;
 }
 
-export const Testimonials = ({ images, className }: TestimonialsProps) => {
+export const GallerySlider = ({ images, className }: GallerySliderProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const targetScrollRef = useRef<number>(0);
   const currentScrollRef = useRef<number>(0);
@@ -115,22 +113,47 @@ export const Testimonials = ({ images, className }: TestimonialsProps) => {
     },
     { scope: containerRef },
   );
-
   return (
-    <section
-      aria-label="Horizontal photo gallery"
-      className={cn(
-        "min-h-200 max-w-360 bg-[url('/images/customer-experience-bg.png')] py-12",
-        className,
-      )}
-    >
-      {/* Heading */}
-      <div className="mb-8 px-10">
-        <h2 className="text-brand-dark text-3xl font-semibold uppercase">
-          Trải Nghiệm Thực Tế Từ Khách Hàng
-        </h2>
+    <div className={cn("relative w-full select-none", className)}>
+      {/* Gradient overlays */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute top-0 bottom-0 left-0 z-10 w-24"
+        style={{
+          background: "linear-gradient(to right, rgb(250,249,247) 0%, transparent 100%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute top-0 right-0 bottom-0 z-10 w-24"
+        style={{
+          background: "linear-gradient(to left, rgb(250,249,247) 0%, transparent 100%)",
+        }}
+      />
+
+      {/* Scroll container */}
+      <div
+        ref={containerRef}
+        role="list"
+        tabIndex={0}
+        aria-label="Scroll left or right to browse images. Use arrow keys."
+        className={cn(
+          "relative overflow-x-auto overflow-y-hidden",
+          "flex flex-row items-center gap-5",
+          "px-10 pb-5",
+          "cursor-grab active:cursor-grabbing",
+          "outline-none focus-visible:ring-2 focus-visible:ring-stone-400 focus-visible:ring-offset-2",
+        )}
+        style={{
+          scrollbarWidth: "thin",
+          scrollbarColor: "#d6d3d1 transparent",
+          WebkitOverflowScrolling: "touch",
+        }}
+      >
+        {images.map((img) => (
+          <GalleryCard key={img.id} image={img} />
+        ))}
       </div>
-      <GallerySlider className="mt-16" images={images} />
-    </section>
+    </div>
   );
 };
