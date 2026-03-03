@@ -1,6 +1,3 @@
-import { BeforeAfterSlider } from "@/components/before-after-slider/before-after-slider";
-import { CARDS } from "@/components/fan-card-slider/data-example";
-import { FanCardSlider } from "@/components/fan-card-slider/fan-card-slider";
 import { GalleryImage } from "@/components/gallery-card/gallery-card";
 import { Testimonials } from "@/sections/testimonials";
 import Image from "next/image";
@@ -57,22 +54,11 @@ const images: GalleryImage[] = [
     alt: "Ocean waves at sunset",
   },
 ];
-const BEFORE_BW = "https://picsum.photos/id/1/540/960";
-const AFTER_COLOR = "https://picsum.photos/id/1/540/960?grayscale";
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
       <Testimonials className="max-w-full lg:max-w-360" images={images} />
-      <section className="mb-8 w-full max-w-360 space-y-3">
-        <BeforeAfterSlider
-          beforeSrc={BEFORE_BW}
-          afterSrc={AFTER_COLOR}
-          alt="Mountain landscape — colour vs black-and-white"
-          initialPosition={40}
-          aspectClass="aspect-video"
-        />
-      </section>
     </div>
   );
 }
