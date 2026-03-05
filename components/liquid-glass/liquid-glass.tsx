@@ -1,9 +1,10 @@
 import { Fragment } from "react/jsx-runtime";
+import styles from "./styles.module.css";
 
 export const LiquidGlass = () => {
   return (
     <Fragment>
-      <div></div>
+      <div className={styles["glass-container"]} />
       <svg className="hidden">
         <filter id="container-glass" x="0%" y="0%" width="100%" height="100%">
           <feTurbulence
