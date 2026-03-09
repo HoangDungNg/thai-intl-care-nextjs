@@ -120,7 +120,7 @@ export const Testimonials = ({ images, className }: TestimonialsProps) => {
     <section
       aria-label="Horizontal photo gallery"
       className={cn(
-        "min-h-200 max-w-360 bg-[url('/images/customer-experience-bg.png')] py-12",
+        "h-screen max-w-360 bg-[url('/images/customer-experience-bg.png')] py-12",
         className,
       )}
     >
@@ -129,6 +129,11 @@ export const Testimonials = ({ images, className }: TestimonialsProps) => {
         <h2 className="text-brand-dark text-3xl font-semibold uppercase">
           Trải Nghiệm Thực Tế Từ Khách Hàng
         </h2>
+        <p className="text-brand-dark/55 mt-6 text-base">
+          Những phản hồi dưới đây là trải nghiệm thực tế từ khách hàng sau khi sử dụng dịch vụ tại
+          Thai Intl Care. Sự hài lòng và kết quả đạt được của mỗi khách hàng luôn là động lực để đội
+          ngũ chúng tôi không ngừng nâng cao chất lượng chuyên môn và dịch vụ.
+        </p>
       </div>
       <GallerySlider className="mt-16" images={images} />
     </section>

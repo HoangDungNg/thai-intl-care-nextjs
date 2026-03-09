@@ -1,5 +1,6 @@
 import { GalleryImage } from "@/components/gallery-card/gallery-card";
 import { LiquidGlass } from "@/components/liquid-glass/liquid-glass";
+import { CallToAction } from "@/sections/call-to-action";
 import { Testimonials } from "@/sections/testimonials";
 import Image from "next/image";
 
@@ -60,7 +61,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center">
       <Testimonials className="max-w-full lg:max-w-360" images={images} />
-      <LiquidGlass />
+      <CallToAction />
     </div>
   );
 }

@@ -1,4 +1,9 @@
 @import "tailwindcss";
+
+@source "../../app";
+@source "../../components";
+@source "../../sections";
+
 @import "tw-animate-css";
 
 @theme {
@@ -12,6 +17,6 @@
 
 @layer base {
   body {
-    @apply bg-white text-brand-dark;
+    @apply text-brand-dark bg-white;
   }
 }
