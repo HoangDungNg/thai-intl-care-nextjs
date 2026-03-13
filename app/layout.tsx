@@ -3,6 +3,7 @@ import { Geist, Be_Vietnam_Pro } from "next/font/google";
 import "./styles/index.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/core/header";
+import { Footer } from "@/components/core/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,8 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(geistSans.variable, beVietnamPro.variable, "antialiased")}>
-        <Header />
-        <div className="mt-21">{children}</div>
+        {/* <Header /> */}
+        <div>{children}</div>
+        <Footer />
       </body>
     </html>
   );

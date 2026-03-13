@@ -98,7 +98,7 @@
 
 @layer base {
   body {
-    @apply text-brand-dark bg-white;
+    @apply text-brand-dark relative bg-white;
   }
 
   * {

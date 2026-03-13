@@ -18,12 +18,9 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // const navLinks = [
-  //   { href: "#about", label: "About" },
-  //   { href: "#services", label: "Services" },
-  //   { href: "#doctors", label: "Our Doctors" },
-  //   { href: "#testimonials", label: "Testimonials" },
-  // ];
+  useEffect(() => {
+    console.info({ isScrolled });
+  }, [isScrolled]);
 
   return (
     <nav
@@ -34,36 +31,31 @@ export function Header() {
       <div className="container mx-auto flex items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-2">
           <span className="text-foreground font-serif text-2xl font-bold tracking-tight">
-            Aesthé<span className="text-primary">tica</span>
+            Thai Intl <span className="text-primary">Care</span>
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        {/* <div className="hidden items-center gap-8 md:flex"> */}
-        {/*   {navLinks.map((link) => ( */}
-        {/*     <Link */}
-        {/*       key={link.href} */}
-        {/*       href={link.href} */}
-        {/*       className="text-muted-foreground hover:text-primary text-sm font-medium transition-colors duration-300" */}
-        {/*     > */}
-        {/*       {link.label} */}
-        {/*     </Link> */}
-        {/*   ))} */}
-        {/* </div> */}
-
-        <div className="hidden items-center gap-4 md:flex">
-          <Link href="#" className="bg-primary rounded p-px">
+        <div className="hidden items-center gap-2 md:flex">
+          <Link
+            href="#"
+            className="hover:border-b-primary rounded-sm border-b border-b-white transition-all hover:scale-[1.05] hover:shadow-sm"
+          >
             <Image src={"/icons/zalo-icon.png"} alt="" width={40} height={40} />
           </Link>
-          {/* <Button */}
-          {/*   variant="outline" */}
-          {/*   className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300" */}
-          {/* > */}
-          {/*   Contact Us */}
-          {/* </Button> */}
-          {/* <Button className="bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300"> */}
-          {/*   Book Appointment */}
-          {/* </Button> */}
+
+          <Link
+            href="#"
+            className="hover:border-b-primary rounded-sm border-b border-b-white transition-all hover:scale-[1.05] hover:shadow-sm"
+          >
+            <Image src={"/icons/facebook-icon.png"} alt="" width={40} height={40} />
+          </Link>
+
+          <Link
+            href="#"
+            className="hover:border-b-primary rounded-sm border-b border-b-white transition-all hover:scale-[1.05] hover:shadow-sm"
+          >
+            <Image src={"/icons/instagram-icon.png"} alt="" width={40} height={40} />
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -83,16 +75,6 @@ export function Header() {
         }`}
       >
         <div className="container mx-auto flex flex-col gap-4 px-6 py-4">
-          {/* {navLinks.map((link) => ( */}
-          {/*   <Link */}
-          {/*     key={link.href} */}
-          {/*     href={link.href} */}
-          {/*     className="text-muted-foreground hover:text-primary py-2 text-sm font-medium transition-colors" */}
-          {/*     onClick={() => setIsMobileMenuOpen(false)} */}
-          {/*   > */}
-          {/*     {link.label} */}
-          {/*   </Link> */}
-          {/* ))} */}
           <div className="border-border flex flex-col gap-2 border-t pt-4">
             <Button
               variant="outline"
