@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Be_Vietnam_Pro } from "next/font/google";
-import "./styles/globals.css";
-import "./styles/base.css";
+import "./styles/index.css";
 import { cn } from "@/lib/utils";
+import { Header } from "@/components/core/header";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +29,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(geistSans.variable, beVietnamPro.variable, "antialiased")}>
-        {children}
+        <Header />
+        <div className="mt-21">{children}</div>
       </body>
     </html>
   );
