@@ -2,9 +2,17 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play, Plus, Heart } from "lucide-react";
-import { useEffect, useState, useRef, MouseEvent } from "react";
+import { ArrowRight, Play } from "lucide-react";
+import { useEffect, useState, useRef } from "react";
 import { AnimatedCounter } from "@/components/common/animated-counter";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { PortraitVideo } from "@/components/common/portrait-video";
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,13 +26,9 @@ export function HeroSection() {
     setIsVisible(true);
   }, []);
 
-  // const handleMouseMove = (e: MouseEvent<HTMLElement>) => {
-  //   if (!heroRef.current) return;
-  //   const rect = heroRef.current.getBoundingClientRect();
-  //   const x = (e.clientX - rect.left - rect.width / 2) / 50;
-  //   const y = (e.clientY - rect.top - rect.height / 2) / 50;
-  //   setMousePosition({ x, y });
-  // };
+  useEffect(() => {
+    console.info({ isVisible });
+  }, [isVisible]);
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -74,7 +78,7 @@ export function HeroSection() {
         ref={bgRef}
       >
         <Image
-          src="/images/hero-bg.png"
+          src="/images/hospital-reception.png"
           alt="Modern aesthetic clinic interior"
           fill
           className="object-cover"
@@ -113,8 +117,8 @@ export function HeroSection() {
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
           >
-            <span className="text-primary mb-4 inline-block text-sm font-medium tracking-widest uppercase">
-              Premium Aesthetic Care
+            <span className="mb-4 inline-block rounded-full bg-white/10 px-3 py-1 text-xs font-bold tracking-widest text-white uppercase backdrop-blur md:text-base">
+              Thai Intl Care
             </span>
           </div>
 
@@ -123,43 +127,64 @@ export function HeroSection() {
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
           >
-            <span className="block">Redefine Your</span>
-            <span className="text-primary block">Natural Beauty</span>
+            <span className="block">Nâng Tầm</span>
+            <span className="text-primary block">Vẻ Đẹp Tự Nhiên</span>
           </h1>
 
-          <p
-            className={`mb-8 max-w-lg transform text-lg leading-relaxed text-white/80 transition-all delay-700 duration-1000 md:text-xl ${
-              isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          >
-            Experience world-class cosmetic procedures with our team of expert surgeons. We blend
-            artistry with precision to enhance your natural beauty.
-          </p>
-
           <div
-            className={`flex transform flex-col gap-4 transition-all delay-900 duration-1000 sm:flex-row ${
+            className={`mb-8 max-w-xl transform text-lg leading-relaxed text-white/80 transition-all delay-700 duration-1000 md:text-2xl ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
           >
-            {/* Glowing CTA Button */}
-            <Button
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 group animate-glow-pulse relative overflow-hidden px-8 transition-transform hover:scale-105"
-            >
-              <span className="relative z-10 flex items-center">
-                Book Consultation
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </span>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="group border-white/30 text-white transition-transform hover:scale-105 hover:bg-white/10"
-            >
-              <Play className="mr-2 h-4 w-4" />
-              Watch Our Story
-            </Button>
+            Trải nghiệm các dịch vụ thẩm mỹ chất lượng cao cùng đội ngũ bác sĩ chuyên nghiệp:
+            <ul className="mt-4 list-disc space-y-2 pl-4 text-sm md:text-lg">
+              <li>Phẫu Thuật Tạo Hình Ngực</li>
+              <li>Liệu Pháp Hormones</li>
+              <li>Tiêm BAP Trẻ Hóa Da</li>
+            </ul>
           </div>
+
+          <Dialog>
+            <div
+              className={`flex transform flex-col gap-4 transition-all delay-900 duration-1000 sm:flex-row ${
+                isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+              }`}
+            >
+              {/* Glowing CTA Button */}
+              <Button
+                size="lg"
+                className="bg-primary text-primary-foreground hover:bg-primary/90 group animate-glow-pulse relative overflow-hidden px-8 transition-transform hover:scale-105"
+                asChild
+              >
+                <a
+                  href="https://zalo.me/4462152339089565647"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="relative z-10 flex items-center">
+                    Tư Vấn Ngay
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </a>
+              </Button>
+              <DialogTrigger asChild>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="group border-white/30 text-white transition-transform hover:scale-105 hover:bg-white/10"
+                >
+                  <Play className="mr-2 h-4 w-4" />
+                  Xem Chi Tiết
+                </Button>
+              </DialogTrigger>
+            </div>
+            <DialogContent showCloseButton={false}>
+              <DialogTitle hidden>Ngực To Không Sẹo</DialogTitle>
+              <DialogDescription asChild>
+                <PortraitVideo src="/videos/hero-vid.mp4" />
+              </DialogDescription>
+            </DialogContent>
+          </Dialog>
 
           {/* Animated Stats */}
           <div
@@ -169,33 +194,33 @@ export function HeroSection() {
           >
             <div className="group">
               <div className="text-primary font-serif text-3xl font-bold transition-transform group-hover:scale-110 md:text-4xl">
-                <AnimatedCounter end={15} suffix="+" isInView={isVisible} />
+                <AnimatedCounter end={10} suffix="+" isInView={isVisible} />
               </div>
-              <div className="mt-1 text-sm text-white/60">Years Experience</div>
+              <div className="mt-1 text-sm text-white/60">Kinh Nghiệm</div>
             </div>
             <div className="group">
               <div className="text-primary font-serif text-3xl font-bold transition-transform group-hover:scale-110 md:text-4xl">
-                <AnimatedCounter end={10} suffix="K+" isInView={isVisible} />
+                <AnimatedCounter end={1000} suffix="+" isInView={isVisible} />
               </div>
-              <div className="mt-1 text-sm text-white/60">Happy Patients</div>
+              <div className="mt-1 text-sm text-white/60">Khách Hàng</div>
             </div>
             <div className="group">
               <div className="text-primary font-serif text-3xl font-bold transition-transform group-hover:scale-110 md:text-4xl">
                 <AnimatedCounter end={98} suffix="%" isInView={isVisible} />
               </div>
-              <div className="mt-1 text-sm text-white/60">Satisfaction</div>
+              <div className="mt-1 text-sm text-white/60">Hài Lòng</div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Animated Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2">
-        <div className="relative flex h-10 w-6 justify-center overflow-hidden rounded-full border-2 border-white/30">
-          <div className="bg-primary mt-2 h-3 w-1.5 animate-bounce rounded-full" />
-        </div>
-        <p className="mt-2 text-center text-xs tracking-widest text-white/40">SCROLL</p>
-      </div>
+      {/* <div className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 place-items-center lg:grid"> */}
+      {/*   <div className="relative flex h-10 w-6 justify-center overflow-hidden rounded-full border-2 border-white/30"> */}
+      {/*     <div className="bg-primary mt-2 h-3 w-1.5 animate-bounce rounded-full" /> */}
+      {/*   </div> */}
+      {/*   <p className="mt-2 text-center text-xs tracking-widest text-white/40">SCROLL</p> */}
+      {/* </div> */}
     </section>
   );
 }
