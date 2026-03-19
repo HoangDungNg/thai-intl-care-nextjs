@@ -2,30 +2,29 @@
 
 import Image from "next/image";
 import { useInView } from "@/hooks/use-in-view";
-import { useTilt } from "@/hooks/use-tilt";
-import { ArrowUpRight, Sparkles, Syringe, Stethoscope } from "lucide-react";
+import { Sparkles, Syringe, Stethoscope } from "lucide-react";
 import { AnimatedCounter } from "@/components/common/animated-counter";
 
 const services = [
   {
     icon: Sparkles,
-    title: "Modern Treatment Rooms",
+    title: "Phòng điều trị hiện đại",
     description:
-      "Our treatment rooms are designed with your comfort in mind, featuring the latest in medical aesthetics equipment and a calming atmosphere.",
+      "Không gian điều trị sạch sẽ, tiện nghi với trang thiết bị y khoa hiện đại, mang đến sự thoải mái và an tâm cho khách hàng trong suốt quá trình nghỉ ngơi và hồi phục.",
     image: "/images/giuong-dich-vu.png",
   },
   {
     icon: Syringe,
-    title: "Advanced Technology",
+    title: "Công nghệ tiên tiến",
     description:
-      "We invest in cutting-edge technology to ensure precise, safe, and effective treatments with minimal recovery time.",
+      "Ứng dụng kỹ thuật tiên tiến giúp cải thiện hình thể hiệu quả, mang lại kết quả tự nhiên, cân đối và hạn chế tối đa dấu vết can thiệp sau điều trị.",
     image: "/images/phuong-phap.jpg",
   },
   {
     icon: Stethoscope,
-    title: "Comprehensive Care",
+    title: "Chăm sóc toàn diện",
     description:
-      "From initial consultation to post-procedure follow-up, we provide thorough care at every step of your aesthetic journey.",
+      "Dịch vụ chăm sóc tận tâm từ đội ngũ điều dưỡng, luôn đồng hành và hỗ trợ chu đáo từ sinh hoạt hằng ngày đến theo dõi sức khỏe, mang lại sự thoải mái và an tâm trong suốt quá trình hồi phục.",
     image: "/images/cham-soc.png",
   },
 ];
@@ -141,10 +140,10 @@ export function ServicesSection() {
           }`}
         >
           {[
-            { value: 24, suffix: "/7", label: "Support Available" },
-            { value: 100, suffix: "%", label: "Sterilized Equipment" },
-            { value: 15, suffix: "+", label: "Certifications" },
-            { value: 5, suffix: "-Star", label: "Patient Rating" },
+            { value: 24, suffix: "/7", label: "Hỗ Trợ" },
+            { value: 100, suffix: "%", label: "Thiết Bị Vô Trùng" },
+            { value: 15, suffix: "+", label: "Chứng Nhận" },
+            { value: 5, suffix: "-Star", label: "Đánh Giá" },
           ].map((stat, index) => (
             <div
               key={stat.label}
