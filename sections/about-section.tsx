@@ -45,7 +45,7 @@ export function AboutSection() {
               <div className="bg-card border-border absolute -right-8 -bottom-8 max-w-xs transform rounded-2xl border p-6 shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-2xl">
                 <div className="flex items-center gap-4">
                   <div className="bg-primary/10 relative flex h-14 w-14 items-center justify-center rounded-full">
-                    <span className="text-primary font-serif text-2xl font-bold">
+                    <span className="text-primary text-2xl font-bold">
                       <AnimatedCounter end={10} isInView={isInView} />
                     </span>
                     <div className="border-primary/30 absolute inset-0 animate-ping rounded-full border-2" />
@@ -62,10 +62,10 @@ export function AboutSection() {
 
               {/* Additional Stats Card */}
               <div className="bg-primary absolute -top-6 -right-4 hidden transform rounded-xl p-4 text-white shadow-lg transition-transform hover:scale-105 md:block">
-                <div className="font-serif text-2xl font-bold">
+                <div className="text-brand-dark text-2xl font-bold">
                   <AnimatedCounter end={1000} suffix="+" isInView={isInView} />
                 </div>
-                <div className="text-xs text-white/80">Khách Hàng Tin Tưởng</div>
+                <div className="text-brand-dark/80 text-xs">Khách Hàng Tin Tưởng</div>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@ export function AboutSection() {
               Về Chúng Tôi
             </span>
 
-            <h2 className="text-foreground mt-4 mb-6 font-serif text-3xl leading-tight font-bold text-balance md:text-4xl lg:text-5xl">
+            <h2 className="text-foreground mt-4 mb-6 text-3xl leading-tight font-bold text-balance md:text-4xl lg:text-5xl">
               An Toàn Và Chuyên Môn Là Ưu Tiên
             </h2>
 

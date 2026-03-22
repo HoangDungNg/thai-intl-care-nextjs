@@ -4,7 +4,7 @@ interface PortraitVideoProps {
 
 export const PortraitVideo = ({ src }: PortraitVideoProps) => {
   return (
-    <div className="mx-auto my-0 aspect-9/16 w-full max-w-90 overflow-hidden rounded-[12px]">
+    <div className="mx-auto my-0 aspect-9/16 w-full overflow-hidden rounded-[12px]">
       <video
         autoPlay
         muted

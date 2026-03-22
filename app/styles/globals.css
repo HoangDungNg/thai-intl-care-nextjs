@@ -13,39 +13,50 @@
   /* #0EA5A4 - Teal accent */
   /* #E9ECF1 - Light gray */
 
-  --background: #f7f9fa;
-  --foreground: #1f2933;
-  --card: #ffffff;
-  --card-foreground: #1f2933;
-  --popover: #ffffff;
-  --popover-foreground: #1f2933;
-  --primary: #0ea5a4;
-  --primary-foreground: #ffffff;
-  --secondary: #e9ecf1;
-  --secondary-foreground: #1f2933;
-  --muted: #e9ecf1;
-  --muted-foreground: #52606d;
-  --accent: #0ea5a4;
-  --accent-foreground: #ffffff;
+  --background: #111111;
+  --foreground: #f5f7fa;
+
+  --card: #1a1a1a;
+  --card-foreground: #f5f7fa;
+
+  --popover: #1a1a1a;
+  --popover-foreground: #f5f7fa;
+
+  --primary: #ffd54f;
+  --primary-foreground: #111111;
+
+  --secondary: #222222;
+  --secondary-foreground: #f5f7fa;
+
+  --muted: #1f1f1f;
+  --muted-foreground: #a1a1aa;
+
+  --accent: #ffd54f;
+  --accent-foreground: #111111;
+
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: #e9ecf1;
-  --input: #e9ecf1;
-  --ring: #0ea5a4;
-  --chart-1: #0ea5a4;
-  --chart-2: #1f2933;
-  --chart-3: #52606d;
-  --chart-4: #e9ecf1;
-  --chart-5: #f7f9fa;
+  --destructive-foreground: #ffffff;
+
+  --border: #2a2a2a;
+  --input: #222222;
+  --ring: #ffd54f;
+
+  --chart-1: #ffd54f;
+  --chart-2: #f5f7fa;
+  --chart-3: #a1a1aa;
+  --chart-4: #2a2a2a;
+  --chart-5: #111111;
+
   --radius: 0.625rem;
-  --sidebar: #ffffff;
-  --sidebar-foreground: #1f2933;
-  --sidebar-primary: #0ea5a4;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #e9ecf1;
-  --sidebar-accent-foreground: #1f2933;
-  --sidebar-border: #e9ecf1;
-  --sidebar-ring: #0ea5a4;
+
+  --sidebar: #161616;
+  --sidebar-foreground: #f5f7fa;
+  --sidebar-primary: #ffd54f;
+  --sidebar-primary-foreground: #111111;
+  --sidebar-accent: #222222;
+  --sidebar-accent-foreground: #f5f7fa;
+  --sidebar-border: #2a2a2a;
+  --sidebar-ring: #ffd54f;
 }
 
 @theme inline {
@@ -94,6 +105,56 @@
   --color-brand-turquoise: #0ea5a4;
   --color-brand-turquoise-light: #f5ffff;
   --color-brand-turquoise-mid: #22788e;
+
+  /* Carousel design tokens — usable as Tailwind utilities */
+  --color-carousel-accent: #c9a96e;
+  --color-carousel-bg: #0e0e0e;
+  --color-carousel-caption: #ede8df;
+
+  --carousel-slide-w: 260px;
+  --carousel-slide-h: 390px;
+  --carousel-gap: 24px;
+  --carousel-duration: 520ms;
+  --carousel-ease: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ── Keyframes ── */
+  --animate-carousel-slide-in-right: carousel-slide-in-right var(--duration-carousel)
+    var(--ease-carousel) both;
+  --animate-carousel-slide-in-left: carousel-slide-in-left var(--duration-carousel)
+    var(--ease-carousel) both;
+  --animate-carousel-fade-to-side: carousel-fade-to-side var(--duration-carousel)
+    var(--ease-carousel) both;
+
+  @keyframes carousel-slide-in-right {
+    from {
+      transform: translateX(56px) scale(0.93);
+      opacity: 0.6;
+    }
+    to {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes carousel-slide-in-left {
+    from {
+      transform: translateX(-56px) scale(0.93);
+      opacity: 0.6;
+    }
+    to {
+      transform: translateX(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes carousel-fade-to-side {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.8;
+    }
+  }
 }
 
 @layer base {

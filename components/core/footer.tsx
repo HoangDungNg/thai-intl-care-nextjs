@@ -2,14 +2,50 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Instagram, Facebook, Twitter, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
+import { Instagram, Facebook, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
 import { Zalo } from "@/assets/icons/zalo";
 
 export function Footer() {
   return (
     <footer className="bg-background sticky top-full overflow-hidden pt-24 pb-8">
-      {/* CTA Section */}
       <div className="container mx-auto px-6">
+        {/* CTA section */}
+        <div className="bg-primary group relative mb-20 overflow-hidden rounded-3xl p-8 md:p-12 lg:p-16">
+          {/* Decorative Elements */}
+          <div className="absolute top-0 right-0 h-96 w-96 translate-x-1/2 -translate-y-1/2 rounded-full bg-white/10 blur-3xl transition-transform duration-700 group-hover:scale-110" />
+          <div className="absolute bottom-0 left-0 h-64 w-64 -translate-x-1/2 translate-y-1/2 rounded-full bg-white/10 blur-3xl transition-transform duration-700 group-hover:scale-110" />
+
+          <div className="relative flex flex-col items-center justify-between gap-8 lg:flex-row">
+            <div className="text-center lg:text-left">
+              <h2 className="text-brand-dark mb-4 font-serif text-3xl font-bold text-balance md:text-4xl">
+                Sẵn Sàng Bắt Đầu?
+              </h2>
+              <p className="text-brand-dark/80 max-w-2xl">
+                Chúng tôi luôn sẵn sàng lắng nghe và tư vấn giải pháp phù hợp nhất để bạn an tâm
+                trên hành trình chăm sóc và hoàn thiện bản thân.
+              </p>
+            </div>
+
+            {/* Glowing CTA Button */}
+            <Button
+              size="lg"
+              className="text-primary group/btn relative overflow-hidden bg-white px-8 whitespace-nowrap shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white/90 hover:shadow-xl"
+              asChild
+            >
+              <a
+                href="https://zalo.me/4462152339089565647"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span className="text-brand-dark relative z-10 flex items-center">
+                  Tư Vấn Ngay
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                </span>
+              </a>
+            </Button>
+          </div>
+        </div>
+
         {/* Footer Content */}
         <div className="mb-16 grid gap-12 md:grid-cols-3">
           {/* Brand */}

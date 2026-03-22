@@ -55,7 +55,7 @@ function ServiceCard({
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="text-foreground group-hover:text-primary mb-3 font-serif text-xl font-semibold transition-colors">
+        <h3 className="text-foreground group-hover:text-primary mb-3 text-xl font-semibold transition-colors">
           {service.title}
         </h3>
 
@@ -75,7 +75,7 @@ export function ServicesSection() {
   const { ref, isInView } = useInView({ threshold: 0.1 });
 
   return (
-    <section id="services" className="bg-secondary/30 relative overflow-hidden py-24 md:py-32">
+    <section id="services" className="bg-background relative overflow-hidden py-24 md:py-32">
       {/* Animated Background Pattern */}
       <div className="pointer-events-none absolute inset-0 opacity-50">
         <svg className="h-full w-full" preserveAspectRatio="none">
@@ -104,7 +104,7 @@ export function ServicesSection() {
             Dịch Vụ Của Chúng Tôi
           </span>
           <h2
-            className={`text-foreground mb-6 transform font-serif text-3xl leading-tight font-bold text-balance transition-all delay-100 duration-700 md:text-4xl lg:text-5xl ${
+            className={`text-foreground mb-6 transform text-3xl leading-tight font-bold text-balance transition-all delay-100 duration-700 md:text-4xl lg:text-5xl ${
               isInView ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
             }`}
           >
@@ -149,7 +149,7 @@ export function ServicesSection() {
               key={stat.label}
               className="bg-card border-border hover:border-primary/30 group rounded-xl border p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-              <div className="text-primary mb-1 font-serif text-2xl font-bold transition-transform group-hover:scale-110">
+              <div className="text-primary mb-1 text-2xl font-bold transition-transform group-hover:scale-110">
                 <AnimatedCounter end={stat.value} suffix={stat.suffix} isInView={isInView} />
               </div>
               <div className="text-muted-foreground text-sm">{stat.label}</div>

@@ -78,35 +78,13 @@ export function HeroSection() {
         ref={bgRef}
       >
         <Image
-          src="/images/hospital-reception.png"
+          src="/images/thai-intl-care-hero.png"
           alt="Modern aesthetic clinic interior"
           fill
           className="object-cover"
           priority
         />
-        <div className="from-foreground/80 via-foreground/50 absolute inset-0 bg-gradient-to-r to-transparent" />
-      </div>
-
-      {/* Animated Medical Line Pattern Background */}
-      <div className="pointer-events-none absolute inset-0 z-[1] overflow-hidden opacity-30">
-        <svg className="h-full w-full" preserveAspectRatio="none">
-          <pattern
-            id="medical-pattern"
-            x="0"
-            y="0"
-            width="100"
-            height="100"
-            patternUnits="userSpaceOnUse"
-          >
-            <path
-              d="M50 0 V40 M30 20 H70"
-              stroke="currentColor"
-              strokeWidth="1"
-              className="text-primary/30"
-            />
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#medical-pattern)" />
-        </svg>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
       </div>
 
       {/* Content */}
@@ -117,13 +95,13 @@ export function HeroSection() {
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
           >
-            <span className="mb-4 inline-block rounded-full bg-white/10 px-3 py-1 text-xs font-bold tracking-widest text-white uppercase backdrop-blur md:text-base">
+            <span className="text-foreground bg-background/10 mb-4 inline-block rounded-full px-3 py-1 text-xs font-bold tracking-widest uppercase backdrop-blur md:text-base">
               Thai Intl Care
             </span>
           </div>
 
           <h1
-            className={`mb-6 transform font-serif text-4xl leading-tight font-bold text-white transition-all delay-500 duration-1000 md:text-6xl lg:text-7xl ${
+            className={`text-foreground mb-6 transform text-4xl leading-tight font-bold transition-all delay-500 duration-1000 md:text-6xl lg:text-7xl ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
           >
@@ -132,7 +110,7 @@ export function HeroSection() {
           </h1>
 
           <div
-            className={`mb-8 max-w-xl transform text-lg leading-relaxed text-white/80 transition-all delay-700 duration-1000 md:text-2xl ${
+            className={`text-foreground/80 mb-8 max-w-xl transform text-lg leading-relaxed transition-all delay-700 duration-1000 md:text-2xl ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
           >
@@ -153,7 +131,7 @@ export function HeroSection() {
               {/* Glowing CTA Button */}
               <Button
                 size="lg"
-                className="bg-primary text-primary-foreground hover:bg-primary/90 group animate-glow-pulse relative overflow-hidden px-8 transition-transform hover:scale-105"
+                className="bg-primary text-brand-dark hover:bg-primary/90 group animate-glow-pulse relative overflow-hidden px-8 transition-transform hover:scale-105"
                 asChild
               >
                 <a
@@ -193,34 +171,26 @@ export function HeroSection() {
             }`}
           >
             <div className="group">
-              <div className="text-primary font-serif text-3xl font-bold transition-transform group-hover:scale-110 md:text-4xl">
+              <div className="text-primary text-3xl font-bold transition-transform group-hover:scale-110 md:text-4xl">
                 <AnimatedCounter end={10} suffix="+" isInView={isVisible} />
               </div>
-              <div className="mt-1 text-sm text-white/60">Kinh Nghiệm</div>
+              <div className="text-foreground/60 mt-1 text-sm">Kinh Nghiệm</div>
             </div>
             <div className="group">
-              <div className="text-primary font-serif text-3xl font-bold transition-transform group-hover:scale-110 md:text-4xl">
+              <div className="text-primary text-3xl font-bold transition-transform group-hover:scale-110 md:text-4xl">
                 <AnimatedCounter end={1000} suffix="+" isInView={isVisible} />
               </div>
-              <div className="mt-1 text-sm text-white/60">Khách Hàng</div>
+              <div className="text-foreground/60 mt-1 text-sm">Khách Hàng</div>
             </div>
             <div className="group">
-              <div className="text-primary font-serif text-3xl font-bold transition-transform group-hover:scale-110 md:text-4xl">
+              <div className="text-primary text-3xl font-bold transition-transform group-hover:scale-110 md:text-4xl">
                 <AnimatedCounter end={98} suffix="%" isInView={isVisible} />
               </div>
-              <div className="mt-1 text-sm text-white/60">Hài Lòng</div>
+              <div className="text-foreground/60 mt-1 text-sm">Hài Lòng</div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* Animated Scroll Indicator */}
-      {/* <div className="absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 place-items-center lg:grid"> */}
-      {/*   <div className="relative flex h-10 w-6 justify-center overflow-hidden rounded-full border-2 border-white/30"> */}
-      {/*     <div className="bg-primary mt-2 h-3 w-1.5 animate-bounce rounded-full" /> */}
-      {/*   </div> */}
-      {/*   <p className="mt-2 text-center text-xs tracking-widest text-white/40">SCROLL</p> */}
-      {/* </div> */}
     </section>
   );
 }

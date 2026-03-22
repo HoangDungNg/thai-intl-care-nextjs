@@ -21,10 +21,7 @@ export default function ExpertiseSection() {
   }, []);
 
   return (
-    <section
-      ref={sectionRef}
-      className="from-background to-secondary/20 relative overflow-hidden bg-gradient-to-b py-20 lg:py-32"
-    >
+    <section ref={sectionRef} className="bg-background relative overflow-hidden py-20 lg:py-32">
       {/* Decorative blurred elements */}
       <div className="bg-primary/10 absolute -top-40 -right-40 h-80 w-80 rounded-full blur-3xl" />
       <div className="bg-accent/10 absolute -bottom-40 -left-40 h-80 w-80 rounded-full blur-3xl" />
@@ -41,7 +38,7 @@ export default function ExpertiseSection() {
               Chuẩn Mực Toàn Cầu
             </p>
           </div>
-          <h2 className="text-foreground mb-4 font-serif text-4xl font-bold text-balance lg:text-5xl">
+          <h2 className="text-foreground mb-4 text-3xl font-bold text-balance lg:text-5xl">
             Không Ngừng Hoàn Thiện Chuyên Môn
           </h2>
           <p className="text-muted-foreground mx-auto max-w-2xl text-lg text-balance">
@@ -65,10 +62,10 @@ export default function ExpertiseSection() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="from-foreground/20 absolute inset-0 bg-gradient-to-t via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="absolute right-0 bottom-0 left-0 p-6 text-white">
                 <p className="text-sm font-semibold opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                  Tham dự các hội nghị quốc tế về thẩm mỹ{" "}
+                  Tham dự các hội nghị khoa học quốc tế{" "}
                 </p>
               </div>
             </div>
@@ -82,40 +79,19 @@ export default function ExpertiseSection() {
           >
             <div className="group relative h-96 min-h-96 overflow-hidden rounded-2xl lg:h-full">
               <Image
-                src="/images/img-placeholder.jpg"
+                src="/images/workshop-2.jpg"
                 alt="Surgeon presenting at international conference"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="from-foreground/40 absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
               <div className="absolute right-0 bottom-0 left-0 p-4 text-white">
-                <h3 className="mb-1 text-base font-semibold">Title ảnh 1</h3>
-                <p className="text-xs text-white/80">Content ảnh 1</p>
+                <h3 className="mb-1 text-base font-semibold">Diễn Đàn Y Khoa Quốc Tế</h3>
+                <p className="text-xs text-white/80">Kết nối và mở rộng chuyên môn</p>
               </div>
             </div>
           </div>
 
-          <div
-            className={`transition-all delay-200 duration-1000 lg:col-span-1 ${
-              isInView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-            }`}
-          >
-            <div className="group relative h-96 min-h-96 overflow-hidden rounded-2xl lg:h-full">
-              <Image
-                src="/images/img-placeholder.jpg"
-                alt="Surgical team performing advanced procedure"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="from-foreground/40 absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
-              <div className="absolute right-0 bottom-0 left-0 p-4 text-white">
-                <h3 className="mb-1 text-base font-semibold">Title ảnh 2</h3>
-                <p className="text-xs text-white/80">Content ảnh 2</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right Vertical Image - Execution */}
           <div
             className={`transition-all delay-200 duration-1000 lg:col-span-1 ${
               isInView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
@@ -128,7 +104,28 @@ export default function ExpertiseSection() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              <div className="from-foreground/40 absolute inset-0 bg-gradient-to-t via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+              <div className="absolute right-0 bottom-0 left-0 p-4 text-white">
+                <h3 className="mb-1 text-base font-semibold">Hội Thảo Thẩm Mỹ</h3>
+                <p className="text-xs text-white/80">Trao đổi và chia sẻ kiến thức về thẩm mỹ</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Vertical Image - Execution */}
+          <div
+            className={`transition-all delay-200 duration-1000 lg:col-span-1 ${
+              isInView ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
+            }`}
+          >
+            <div className="group relative h-96 min-h-96 overflow-hidden rounded-2xl lg:h-full">
+              <Image
+                src="/images/workshop-4.jpg"
+                alt="Surgical team performing advanced procedure"
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
               <div className="absolute right-0 bottom-0 left-0 p-4 text-white">
                 <h3 className="mb-1 text-base font-semibold">Thực Hiện Bởi Chuyên Gia</h3>
                 <p className="text-xs text-white/80">Kỹ thuật được áp dụng với độ chính xác cao</p>
