@@ -1,11 +1,12 @@
 "use client";
 import { PortraitCarouselHandle, PortraitCarousel } from "@/components/common/portrait-carousel";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Quote } from "lucide-react";
 import { useInView } from "@/hooks/use-in-view";
 import { cn } from "@/lib/utils";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
-const IMAGES = Array.from({ length: 12 }, (_, index) => ({
+const IMAGES = Array.from({ length: 15 }, (_, index) => ({
   src: `/images/feedback/feedback-${index + 1}.jpg`,
   alt: `feedback-${index + 1}.jpg`,
   caption: "",
@@ -14,7 +15,10 @@ const IMAGES = Array.from({ length: 12 }, (_, index) => ({
 export const CustomerFeedback = () => {
   const { ref, isInView } = useInView({ threshold: 0.1 });
   const carouselRef = useRef<PortraitCarouselHandle>(null);
-
+  const isTablet = useMediaQuery("(min-width: 768px)");
+  useEffect(() => {
+    console.info({ isTablet });
+  }, [isTablet]);
   return (
     <div
       id="testimonials"
@@ -86,16 +90,18 @@ export const CustomerFeedback = () => {
             đồng hành cùng chúng tôi trong hành trình hoàn thiện vẻ đẹp.{" "}
           </p>
         </div>
-        <PortraitCarousel
-          className={cn(
-            "transition-all delay-300 duration-700",
-            isInView ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
-          )}
-          defaultActive={1}
-          ref={carouselRef}
-          images={IMAGES}
-          autoPlay={false}
-        />
+        {typeof isTablet === "boolean" && (
+          <PortraitCarousel
+            className={cn(
+              "transition-all delay-300 duration-700",
+              isInView ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0",
+            )}
+            defaultActive={isTablet ? 1 : 0}
+            ref={carouselRef}
+            images={IMAGES}
+            autoPlay={false}
+          />
+        )}
       </div>
     </div>
   );

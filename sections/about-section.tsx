@@ -90,10 +90,11 @@ export function AboutSection() {
             </p>
 
             <p className="text-muted-foreground mb-8 text-base leading-relaxed lg:text-lg">
-              Từ phẫu thuật cắt ngực (top surgery), đến phẫu thuật cắt tử cung một trong những hành
-              trình hiếm khi được chia sẻ công khai trong cộng đồng chuyển giới nam tại Việt Nam -
-              cho đến các can thiệp thẩm mỹ cơ thể và gương mặt, mỗi trải nghiệm đều mang lại sự
-              thấu hiểu sâu sắc về tâm lý, thể trạng và quá trình hồi phục sau phẫu thuật.
+              Từ phẫu thuật cắt ngực (Top Surgery), đến phẫu thuật cắt tử cung (Hysterectomy) một
+              trong những hành trình hiếm khi được chia sẻ công khai trong cộng đồng chuyển giới nam
+              tại Việt Nam - cho đến các can thiệp thẩm mỹ cơ thể và gương mặt, mỗi trải nghiệm đều
+              mang lại sự thấu hiểu sâu sắc về tâm lý, thể trạng và quá trình hồi phục sau phẫu
+              thuật.
             </p>
 
             <p className="text-muted-foreground mb-8 text-base leading-relaxed lg:text-lg">

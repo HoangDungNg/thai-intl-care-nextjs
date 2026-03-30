@@ -8,6 +8,7 @@ import React, {
   useRef,
   forwardRef,
   useImperativeHandle,
+  useLayoutEffect,
 } from "react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -79,6 +80,11 @@ export const PortraitCarousel = forwardRef<PortraitCarouselHandle, PortraitCarou
     // Instead we measure the viewport div's actual pixel width and store it as
     // --mobile-slide-w so the track and slides always use the same unit.
     const [mobileSlideW, setMobileSlideW] = useState(0);
+
+    useEffect(() => {
+      setCurrent(defaultActive);
+    }, [defaultActive]);
+
     useEffect(() => {
       const el = viewportRef.current;
       if (!el) return;
@@ -265,7 +271,7 @@ export const PortraitCarousel = forwardRef<PortraitCarouselHandle, PortraitCarou
 
               return (
                 <div
-                  key={i}
+                  key={img.src}
                   aria-hidden={!isActive}
                   onClick={() => {
                     if (!isActive) goTo(i);

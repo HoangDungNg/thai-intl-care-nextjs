@@ -1,18 +1,9 @@
 import { useEffect, useState } from "react";
 
-export function useMediaQuery(query: string): boolean {
-  const getMatches = (query: string): boolean => {
-    if (typeof window === "undefined") {
-      return false;
-    }
-    return window.matchMedia(query).matches;
-  };
-
-  const [matches, setMatches] = useState<boolean>(getMatches(query));
+export function useMediaQuery(query: string): boolean | undefined {
+  const [matches, setMatches] = useState<boolean | undefined>(undefined);
 
   useEffect(() => {
-    if (typeof window === "undefined") return;
-
     const mediaQueryList = window.matchMedia(query);
 
     const handleChange = () => {
@@ -21,19 +12,8 @@ export function useMediaQuery(query: string): boolean {
 
     handleChange();
 
-    if (mediaQueryList.addEventListener) {
-      mediaQueryList.addEventListener("change", handleChange);
-    } else {
-      mediaQueryList.addListener(handleChange);
-    }
-
-    return () => {
-      if (mediaQueryList.removeEventListener) {
-        mediaQueryList.removeEventListener("change", handleChange);
-      } else {
-        mediaQueryList.removeListener(handleChange);
-      }
-    };
+    mediaQueryList.addEventListener("change", handleChange);
+    return () => mediaQueryList.removeEventListener("change", handleChange);
   }, [query]);
 
   return matches;
