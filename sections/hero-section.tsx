@@ -27,10 +27,6 @@ export function HeroSection() {
   }, []);
 
   useEffect(() => {
-    console.info({ isVisible });
-  }, [isVisible]);
-
-  useEffect(() => {
     const hero = heroRef.current;
     const bg = bgRef.current;
     if (!hero || !bg) return;
@@ -89,7 +85,7 @@ export function HeroSection() {
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 pt-24">
-        <div className="max-w-2xl">
+        <div className="max-w-4xl">
           <div
             className={`transform transition-all delay-300 duration-1000 ${
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
@@ -105,8 +101,8 @@ export function HeroSection() {
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
           >
-            <span className="block">Nâng Tầm</span>
-            <span className="text-primary block">Vẻ Đẹp Tự Nhiên</span>
+            <span className="text-2xl md:text-4xl lg:text-5xl">Cùng bạn trên hành trình</span>
+            <span className="text-primary block">Hoàn Thiện Chính Mình</span>
           </h1>
 
           <div
@@ -114,12 +110,15 @@ export function HeroSection() {
               isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
             }`}
           >
-            Trải nghiệm các dịch vụ thẩm mỹ chất lượng cao cùng đội ngũ bác sĩ chuyên nghiệp:
-            <ul className="mt-4 list-disc space-y-2 pl-4 text-sm md:text-lg">
-              <li>Phẫu Thuật Tạo Hình Ngực</li>
-              <li>Liệu Pháp Hormones</li>
-              <li>Tiêm BAP Trẻ Hóa Da</li>
-            </ul>
+            Không chỉ là một ca phẫu thuật, mà là cả một hành trình cần được theo dõi, chăm sóc và
+            dẫn dắt đúng cách. Tại THAI INTL CARE, chúng tôi không thay thế bác sĩ - chúng tôi đảm
+            bảo bạn được hỗ trợ đúng người, đúng thời điểm, đúng quy trình từ trước đến sau phẫu
+            thuật.
+            {/* <ul className="mt-4 list-disc space-y-2 pl-4 text-sm md:text-lg"> */}
+            {/*   <li>Phẫu Thuật Tạo Hình Ngực</li> */}
+            {/*   <li>Liệu Pháp Hormones</li> */}
+            {/*   <li>Tiêm BAP Trẻ Hóa Da</li> */}
+            {/* </ul> */}
           </div>
 
           <Dialog>
@@ -135,12 +134,12 @@ export function HeroSection() {
                 asChild
               >
                 <a
-                  href="https://zalo.me/4462152339089565647"
+                  href="https://www.facebook.com/thainguyen92s"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <span className="relative z-10 flex items-center">
-                    Tư Vấn Ngay
+                    Tham Vấn Cùng Zuki Nguyen Ngay
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </a>
@@ -152,7 +151,7 @@ export function HeroSection() {
                   className="group border-white/30 text-white transition-transform hover:scale-105 hover:bg-white/10"
                 >
                   <Play className="mr-2 h-4 w-4" />
-                  Xem Chi Tiết
+                  Khám Phá Chi Tiết Dịch Vụ
                 </Button>
               </DialogTrigger>
             </div>
@@ -174,17 +173,17 @@ export function HeroSection() {
               <div className="text-primary text-3xl font-bold transition-transform group-hover:scale-110 md:text-4xl">
                 <AnimatedCounter end={10} suffix="+" isInView={isVisible} />
               </div>
-              <div className="text-foreground/60 mt-1 text-sm">Kinh Nghiệm</div>
+              <div className="text-foreground/60 mt-1 text-sm">Đội Ngũ Bác Sĩ & Cộng Sự</div>
             </div>
             <div className="group">
               <div className="text-primary text-3xl font-bold transition-transform group-hover:scale-110 md:text-4xl">
-                <AnimatedCounter end={1000} suffix="+" isInView={isVisible} />
+                <AnimatedCounter end={100} suffix="+" isInView={isVisible} />
               </div>
               <div className="text-foreground/60 mt-1 text-sm">Khách Hàng</div>
             </div>
             <div className="group">
               <div className="text-primary text-3xl font-bold transition-transform group-hover:scale-110 md:text-4xl">
-                <AnimatedCounter end={98} suffix="%" isInView={isVisible} />
+                <AnimatedCounter end={100} suffix="%" isInView={isVisible} />
               </div>
               <div className="text-foreground/60 mt-1 text-sm">Hài Lòng</div>
             </div>

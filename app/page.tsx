@@ -1,9 +1,8 @@
 import { AboutSection } from "@/sections/about-section";
-import { CarouselDemo } from "@/sections/carousel-demo";
+import { CustomerFeedback } from "@/sections/customer-feedback";
 import ExpertiseSection from "@/sections/expertise-section";
 import { HeroSection } from "@/sections/hero-section";
 import { ServicesSection } from "@/sections/services-section";
-import { TestimonialsSection } from "@/sections/testimonials-section";
 import { Fragment } from "react/jsx-runtime";
 
 export default function Home() {
@@ -11,10 +10,9 @@ export default function Home() {
     <Fragment>
       <HeroSection />
       <AboutSection />
+      <CustomerFeedback />
       <ServicesSection />
       <ExpertiseSection />
-      <CarouselDemo />
-      {/* <TestimonialsSection /> */}
     </Fragment>
   );
 }

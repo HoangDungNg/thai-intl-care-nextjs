@@ -9,10 +9,10 @@ export function AboutSection() {
   const { ref, isInView } = useInView({ threshold: 0.2 });
 
   const features = [
-    "Đội ngũ bác sĩ tạo hình đạt chứng nhận chuyên môn",
-    "Trang thiết bị y khoa hiện đại, đạt chuẩn",
-    "Phác đồ điều trị cá nhân hóa",
-    "Chăm sóc hậu điều trị tận tâm và toàn diện",
+    "Đồng hành, kết nối đội ngũ bác sĩ chuyên môn cao phù hợp với tình trạng cá nhân",
+    "Chăm sóc, theo sát từng giai đoạn trước - trong - sau phẫu thuật",
+    "Dịch vụ hỗ trợ cá nhân hóa 1:1 xuyên suốt hành trình thẫm mỹ",
+    "Hướng dẫn chăm sóc hậu phẫu chuẩn, hạn chế rủi ro, làm đẹp vết mổ, hoàn thiện tốt nhất",
   ];
 
   return (
@@ -46,7 +46,7 @@ export function AboutSection() {
                 <div className="flex items-center gap-4">
                   <div className="bg-primary/10 relative flex h-14 w-14 items-center justify-center rounded-full">
                     <span className="text-primary text-2xl font-bold">
-                      <AnimatedCounter end={10} isInView={isInView} />
+                      <AnimatedCounter end={5} isInView={isInView} />
                     </span>
                     <div className="border-primary/30 absolute inset-0 animate-ping rounded-full border-2" />
                   </div>
@@ -63,7 +63,7 @@ export function AboutSection() {
               {/* Additional Stats Card */}
               <div className="bg-primary absolute -top-6 -right-4 hidden transform rounded-xl p-4 text-white shadow-lg transition-transform hover:scale-105 md:block">
                 <div className="text-brand-dark text-2xl font-bold">
-                  <AnimatedCounter end={1000} suffix="+" isInView={isInView} />
+                  <AnimatedCounter end={100} suffix="+" isInView={isInView} />
                 </div>
                 <div className="text-brand-dark/80 text-xs">Khách Hàng Tin Tưởng</div>
               </div>
@@ -81,20 +81,30 @@ export function AboutSection() {
             </span>
 
             <h2 className="text-foreground mt-4 mb-6 text-3xl leading-tight font-bold text-balance md:text-4xl lg:text-5xl">
-              An Toàn Và Chuyên Môn Là Ưu Tiên
+              Người Đứng Sau Hành Trình Của Bạn
             </h2>
 
-            <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
-              Chúng tôi hiểu rằng mỗi khách hàng có nhu cầu và tình trạng cơ thể khác nhau, vì vậy
-              mọi dịch vụ đều được tư vấn và thiết kế theo từng cá nhân. Các liệu pháp như hormone
-              therapy, trẻ hóa da BAP, hay các can thiệp thẩm mỹ chuyên khoa đều được thực hiện
-              trong môi trường kiểm soát y khoa chặt chẽ.{" "}
+            <p className="text-muted-foreground mb-6 text-base leading-relaxed lg:text-lg">
+              Thái Nguyễn (Zuki Nguyễn) – người sáng lập THAI INTL CARE, là người đã trực tiếp trải
+              qua nhiều ca phẫu thuật lớn nhỏ để hoàn thiện chính mình.
             </p>
 
-            <p className="text-muted-foreground mb-8 leading-relaxed">
-              Sự kết hợp giữa công nghệ hiện đại, quy trình an toàn và đội ngũ chuyên môn giàu kinh
-              nghiệm giúp đảm bảo hiệu quả tối ưu cho từng khách hàng. Đây chính là cam kết của
-              chúng tôi trong việc mang đến dịch vụ thẩm mỹ và chăm sóc sức khỏe đáng tin cậy.
+            <p className="text-muted-foreground mb-8 text-base leading-relaxed lg:text-lg">
+              Từ phẫu thuật cắt ngực (top surgery), đến phẫu thuật cắt tử cung một trong những hành
+              trình hiếm khi được chia sẻ công khai trong cộng đồng chuyển giới nam tại Việt Nam -
+              cho đến các can thiệp thẩm mỹ cơ thể và gương mặt, mỗi trải nghiệm đều mang lại sự
+              thấu hiểu sâu sắc về tâm lý, thể trạng và quá trình hồi phục sau phẫu thuật.
+            </p>
+
+            <p className="text-muted-foreground mb-8 text-base leading-relaxed lg:text-lg">
+              Không chỉ dừng lại ở trải nghiệm cá nhân, Zuki Nguyễn đã trực tiếp đồng hành và chăm
+              sóc hơn 100+ ca phẫu thuật thẩm mỹ và bệnh lý, từ những ca đơn giản đến phức tạp.
+            </p>
+
+            <p className="text-muted-foreground mb-8 text-base leading-relaxed lg:text-lg">
+              Với vai trò là người theo sát khách hàng xuyên suốt quá trình, từ chuẩn bị trước phẫu
+              thuật đến giai đoạn hồi phục, Thái hiểu rõ: Một ca phẫu thuật thành công không chỉ nằm
+              trên bàn mổ - mà nằm ở toàn bộ quá trình trước và sau đó.
             </p>
 
             {/* Features List with Staggered Animation */}

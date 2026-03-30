@@ -1,17 +1,17 @@
 "use client";
-import PortraitCarousel, { PortraitCarouselHandle } from "@/components/common/portrait-carousel";
+import { PortraitCarouselHandle, PortraitCarousel } from "@/components/common/portrait-carousel";
 import { useRef } from "react";
 import { Quote } from "lucide-react";
 import { useInView } from "@/hooks/use-in-view";
 import { cn } from "@/lib/utils";
 
-const IMAGES = Array.from({ length: 10 }, (_, index) => ({
+const IMAGES = Array.from({ length: 12 }, (_, index) => ({
   src: `/images/feedback/feedback-${index + 1}.jpg`,
   alt: `feedback-${index + 1}.jpg`,
   caption: "",
 }));
 
-export const CarouselDemo = () => {
+export const CustomerFeedback = () => {
   const { ref, isInView } = useInView({ threshold: 0.1 });
   const carouselRef = useRef<PortraitCarouselHandle>(null);
 
@@ -75,15 +75,15 @@ export const CarouselDemo = () => {
               isInView ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
             }`}
           >
-            Khách Hàng Nói Gì Về Chúng Tôi
+            Khách Hàng Nói Gì Khi Được Làm Việc Cùng Thái - Zuki Nguyễn
           </h2>
           <p
             className={`transform text-lg text-white/60 transition-all delay-200 duration-700 ${
               isInView ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
             }`}
           >
-            Những trải nghiệm chân thực từ các khách hàng đã tin tưởng đồng hành cùng chúng tôi
-            trong hành trình hoàn thiện vẻ đẹp.{" "}
+            Những trải nghiệm chân thực từ các khách hàng đã tin tưởng <br />
+            đồng hành cùng chúng tôi trong hành trình hoàn thiện vẻ đẹp.{" "}
           </p>
         </div>
         <PortraitCarousel

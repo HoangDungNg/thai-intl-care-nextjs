@@ -137,9 +137,21 @@ export default function ExpertiseSection() {
         {/* Stats Section */}
         <div className="mt-16 grid grid-cols-1 gap-6 md:grid-cols-3">
           {[
-            { number: "25+", label: "Hội Nghị Y Khoa Quốc Tế", delay: 0 },
-            { number: "40+", label: "Hội Thảo Chuyên Môn Quốc Tế", delay: 100 },
-            { number: "50+", label: "Kỹ Thuật Tiên Tiến Được Ứng Dụng", delay: 200 },
+            {
+              label:
+                "Bạn không còn phải mơ hồ khi đứng trước hàng loạt lựa chọn về bác sĩ và phương pháp, hậu phẫu, chăm sóc",
+              delay: 0,
+            },
+            {
+              label:
+                "Không chọn theo xu hướng số đông - mà lựa chọn những gì thẩm mỹ nhất để hoàn thiện cho bệnh nhân",
+              delay: 100,
+            },
+            {
+              label:
+                "Đạt kết quả tối ưu, đồng thời hạn chế tối đa rủi ro không cần thiết. Bạn không cần biết quá nhiều - chỉ cần được định hướng đúng",
+              delay: 200,
+            },
           ].map((stat, index) => (
             <div
               key={index}
@@ -148,7 +160,7 @@ export default function ExpertiseSection() {
               }`}
               style={{ transitionDelay: `${stat.delay}ms` }}
             >
-              <div className="text-primary mb-2 text-3xl font-bold lg:text-4xl">{stat.number}</div>
+              {/* <div className="text-primary mb-2 text-3xl font-bold lg:text-4xl">{stat.number}</div> */}
               <p className="text-muted-foreground text-sm">{stat.label}</p>
             </div>
           ))}

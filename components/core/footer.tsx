@@ -2,8 +2,23 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Instagram, Facebook, MapPin, Phone, Mail, ArrowRight } from "lucide-react";
-import { Zalo } from "@/assets/icons/zalo";
+import { Instagram, Facebook, MapPin, Mail, ArrowRight } from "lucide-react";
+import { Tiktok } from "@/assets/icons/tiktok";
+
+const CONTACT = [
+  {
+    Icon: Instagram,
+    href: "https://www.instagram.com/zuki.nguyen?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+  },
+  {
+    Icon: Facebook,
+    href: "https://www.facebook.com/thainguyen92s",
+  },
+  {
+    Icon: Tiktok,
+    href: "https://www.tiktok.com/@zukinguyen?is_from_webapp=1&sender_device=pc",
+  },
+];
 
 export function Footer() {
   return (
@@ -21,7 +36,7 @@ export function Footer() {
                 Sẵn Sàng Bắt Đầu?
               </h2>
               <p className="text-brand-dark/80 max-w-2xl">
-                Chúng tôi luôn sẵn sàng lắng nghe và tư vấn giải pháp phù hợp nhất để bạn an tâm
+                Chúng tôi luôn sẵn sàng lắng nghe và chia sẻ giải pháp phù hợp nhất để bạn an tâm
                 trên hành trình chăm sóc và hoàn thiện bản thân.
               </p>
             </div>
@@ -29,16 +44,17 @@ export function Footer() {
             {/* Glowing CTA Button */}
             <Button
               size="lg"
-              className="text-primary group/btn relative overflow-hidden bg-white px-8 whitespace-nowrap shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white/90 hover:shadow-xl"
+              className="text-primary group/btn relative h-12.5 overflow-hidden bg-white px-8 whitespace-nowrap shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white/90 hover:shadow-xl"
               asChild
             >
               <a
-                href="https://zalo.me/4462152339089565647"
+                href="https://www.facebook.com/thainguyen92s"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <span className="text-brand-dark relative z-10 flex items-center">
-                  Tư Vấn Ngay
+                  Bắt Đầu Hành Trình <br />
+                  Đúng Cách Ngay
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                 </span>
               </a>
@@ -56,26 +72,14 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-muted-foreground mb-6 text-sm leading-relaxed">
-              Nơi khoa học thăng hoa cùng nghệ thuật tôn vinh vẻ đẹp. Dịch vụ thẩm mỹ cao cấp dành
-              cho những ai khao khát sự hoàn mỹ.
+              Bạn không chỉ cần một ca phẫu thuật - bạn cần một người đồng hành biết rõ toàn bộ hành
+              trình.
             </p>
-            <div className="flex gap-3">
-              {[Instagram, Facebook, Zalo].map((Icon, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="bg-secondary text-muted-foreground hover:bg-primary flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-white"
-                  aria-label={`Social media link ${index + 1}`}
-                >
-                  <Icon className="h-4 w-4" />
-                </a>
-              ))}
-            </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-foreground mb-6 font-semibold">Dịch Vụ</h4>
+            <h4 className="text-foreground mb-6 font-semibold">Hành Trình - Giải Pháp</h4>
             <ul className="space-y-4">
               {[
                 "Thủ thuật thẩm mỹ khuôn mặt",
@@ -98,25 +102,36 @@ export function Footer() {
 
           {/* Contact & Newsletter */}
           <div>
-            <h4 className="text-foreground mb-6 font-semibold">Liên Hệ</h4>
+            <h4 className="text-foreground mb-6 font-semibold">
+              Liên Hệ - Thái Nguyễn (Mr. Zuki Nguyen)
+            </h4>
             <ul className="mb-8 space-y-4">
               <li className="group flex items-start gap-3">
                 <MapPin className="text-primary mt-0.5 h-5 w-5 shrink-0 transition-transform group-hover:scale-110" />
                 <span className="text-muted-foreground text-sm">
-                  123 Medical Plaza, Suite 500
-                  <br />
-                  New York, NY 10001
+                  Ho Chi Minh city | Viet Nam | Bangkok | Thailand
                 </span>
               </li>
               <li className="group flex items-center gap-3">
-                <Phone className="text-primary h-5 w-5 shrink-0 transition-transform group-hover:scale-110" />
-                <span className="text-muted-foreground text-sm">+1 (555) 123-4567</span>
-              </li>
-              <li className="group flex items-center gap-3">
                 <Mail className="text-primary h-5 w-5 shrink-0 transition-transform group-hover:scale-110" />
-                <span className="text-muted-foreground text-sm">hello@aesthetica.com</span>
+                <span className="text-muted-foreground text-sm">zukinguyen176@gmail.com</span>
               </li>
             </ul>
+
+            <div className="mt-4 flex gap-3">
+              {CONTACT.map(({ Icon, href }, index) => (
+                <a
+                  key={index}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-secondary text-muted-foreground hover:bg-primary active:bg-primary flex h-10 w-10 items-center justify-center rounded-full transition-all duration-300 hover:-translate-y-1 hover:scale-110 hover:text-white active:scale-110 active:text-white"
+                  aria-label={`Social media link ${index + 1}`}
+                >
+                  <Icon className="h-4 w-4" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 

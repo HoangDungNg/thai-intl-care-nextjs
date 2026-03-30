@@ -15,9 +15,9 @@ const services = [
   },
   {
     icon: Syringe,
-    title: "Công nghệ tiên tiến",
+    title: "Giải pháp theo thể trạng",
     description:
-      "Ứng dụng kỹ thuật tiên tiến giúp cải thiện hình thể hiệu quả, mang lại kết quả tự nhiên, cân đối và hạn chế tối đa dấu vết can thiệp sau điều trị.",
+      "Sau khi trực tiếp trải qua nhiều ca phẫu thuật lớn nhỏ và đồng hành cùng đội ngũ các bác sĩ tạo hình giàu kinh nghiệm, tôi hiểu rằng:\n\nKhông có một phương pháp nào là tốt nhất - chỉ có phương pháp phù hợp nhất với từng cơ thể.\nMỗi khách hàng là một thể trạng khác nhau, từ cấu trúc cơ thể, nền tảng sức khỏe cho đến mục tiêu thẩm mỹ - đều cần được đánh giá và lựa chọn hướng can thiệp riêng biệt.",
     image: "/images/phuong-phap.jpg",
   },
   {
@@ -59,7 +59,9 @@ function ServiceCard({
           {service.title}
         </h3>
 
-        <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
+        <p className="text-muted-foreground text-sm leading-relaxed whitespace-pre-line">
+          {service.description}
+        </p>
       </div>
 
       {/* 3D Shadow Effect */}
@@ -115,8 +117,29 @@ export function ServicesSection() {
               isInView ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
             }`}
           >
-            Tại đây, mọi quy trình từ khâu chuẩn bị, phẫu thuật đến chăm sóc hậu phẫu đều được thực
-            hiện nhằm mang đến trải nghiệm chăm sóc trọn vẹn cho khách hàng.
+            Chính sự kết hợp giữa trải nghiệm thực tế, kiến thức tích lũy và quá trình đồng hành
+            cùng khách hàng đã giúp THAI INTL CARE trở thành lựa chọn đáng tin cậy cho những ai cần:
+          </p>
+
+          <div
+            className={`flex transform justify-center transition-all delay-300 duration-700 ${
+              isInView ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
+            }`}
+          >
+            <ul className="text-muted-foreground mt-8 list-disc space-y-1 px-6 text-left text-base">
+              <li>Một hệ thống hỗ trợ rõ ràng, cá nhân hóa</li>
+              <li>Một người hiểu rõ hành trình họ sắp đi qua</li>
+              <li>Một người luôn theo sát nhằm giảm thiểu rủi ro</li>
+            </ul>
+          </div>
+
+          <p
+            className={`text-muted-foreground mt-12 transform text-center text-base transition-all delay-400 duration-700 ${
+              isInView ? "translate-y-0 opacity-100" : "translate-y-5 opacity-0"
+            }`}
+          >
+            Không chỉ là dịch vụ - mà là sự đồng hành từ người đã trải qua để bạn không phải tự mình
+            đi qua hành trình này một cách mơ hồ.
           </p>
         </div>
 
@@ -141,9 +164,13 @@ export function ServicesSection() {
         >
           {[
             { value: 24, suffix: "/7", label: "Hỗ Trợ" },
-            { value: 100, suffix: "%", label: "Thiết Bị Vô Trùng" },
-            { value: 15, suffix: "+", label: "Chứng Nhận" },
-            { value: 5, suffix: "-Star", label: "Đánh Giá" },
+            { value: 100, suffix: "%", label: "Ca Phẫu Thuật Thành Công" },
+            { value: 100, suffix: "+", label: "Bệnh Nhân Trong và Ngoài Nước" },
+            {
+              value: 5,
+              suffix: "-Star",
+              label: "Dịch Vụ Đưa Đón Sân Bay\n - Ở Căn Hộ 5 Sao\n- Nấu Ăn Theo Yêu Cầus",
+            },
           ].map((stat, index) => (
             <div
               key={stat.label}
